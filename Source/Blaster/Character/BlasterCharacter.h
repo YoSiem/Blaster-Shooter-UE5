@@ -92,7 +92,6 @@ private:
 
 	ETurningInPlace TurningInPlace;
 	void TurnInPlace(float DeltaTime);
-
 	UPROPERTY(EditAnywhere, Category = Combat)
 	class UAnimMontage* FireWeaponMontage;
 
@@ -104,6 +103,9 @@ public:
 	FORCEINLINE float GetAO_Pitch() const { return AO_Pitch; }
 
 	FORCEINLINE ETurningInPlace GetTurningInPlace() const { return TurningInPlace; }
+
+	FVector GetHitTarget() const;
+
 
 	AWeapon* GetEquippedWeapon();
 };
