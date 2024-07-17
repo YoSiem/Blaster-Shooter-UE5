@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Blaster/HUD/BlasterHUD.h"
 #include "CombatComponent.generated.h"
 
 #define TRACE_LENGTH 80000.f
@@ -63,7 +64,7 @@ private:
 	bool bFireButtonPressed;
 
 	FVector HitTarget;
-
+	FHUDPackage HUDPackage;
 	/**
 	* HUD and crosshairs
 	*/

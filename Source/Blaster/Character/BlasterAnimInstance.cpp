@@ -66,7 +66,9 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaTime)
 			FVector Temp1 = RightHandTransform.GetLocation();
 			FVector Temp2 = RightHandTransform.GetLocation() + (RightHandTransform.GetLocation() - BlasterCharacter->GetHitTarget());
 			//RightHandRotation = UKismetMathLibrary::FindLookAtRotation(RightHandTransform.GetLocation(), RightHandTransform.GetLocation() + (RightHandTransform.GetLocation() - BlasterCharacter->GetHitTarget()));
-			RightHandRotation = UKismetMathLibrary::MakeRotFromY(Temp2 - Temp1);
+			FRotator LookAtRotation = UKismetMathLibrary::MakeRotFromY(Temp2 - Temp1);
+			RightHandRotation = FMath::RInterpTo(RightHandRotation, LookAtRotation, DeltaTime, 30.f);
 		}
+	
 	}
 }
